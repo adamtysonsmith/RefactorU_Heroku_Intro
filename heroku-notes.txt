@@ -1,0 +1,17 @@
+Heroku requires a process file in your app: Procfile
+This file has no extensions and must be capitalized.
+
+Here is an example of setting up a web process
+web: node app.js
+
+-------------------------------------------------
+
+Heroku will also assign a port and store the variable in process.env.PORT
+We can specify the port passed into our server like this:
+
+var port = process.env.PORT || 6634;
+console.log(process.env);
+
+var server = app.listen(port, function() {
+	console.log('Express server listening on port ' + server.address().port);
+});
